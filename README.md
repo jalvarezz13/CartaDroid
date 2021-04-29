@@ -3,7 +3,7 @@
 
 Asignatura: Interacción Persona-Ordenador II
 
-Autores: Javier Álvarez Páramo, Juan Muñoz Calvo y Carlos Mohedano Calleja
+Autores: Javier Álvarez Páramo, Juan Muñoz Calvo y Carlos Mohedano Callejo
   
 Curso: 2020-2021
 
