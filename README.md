@@ -1,5 +1,5 @@
 # Android a la Carta #
-### Construcción de la carta para un restaurante utilizando Android Studio y Java. Permitirá al usuario navegar entre los distintos platos, postres o bebidas y ver información adicional sobre estos. ###
+### Construcción de una app para Android que almacena la carta para un restaurante utilizando Android Studio y Java. Permitirá al usuario navegar entre los distintos platos, postres o bebidas y ver información adicional sobre estos. ###
 
 Asignatura: Interacción Persona-Ordenador II
 
