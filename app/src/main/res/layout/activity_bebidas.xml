@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-    tools:context=".Comidas">
+    tools:context=".Bebidas">
 
     <TextView
         android:id="@+id/textView"
@@ -14,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="5dp"
-        android:text="LISTADO DE COMIDAS"
+        android:text="LISTADO DE BEBIDAS"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#000000"
@@ -22,7 +21,7 @@
         android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvComidas"
+        android:id="@+id/rvBebidas"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>

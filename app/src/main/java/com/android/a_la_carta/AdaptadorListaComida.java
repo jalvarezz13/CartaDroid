@@ -14,10 +14,10 @@ public class AdaptadorListaComida extends RecyclerView.Adapter<AdaptadorListaCom
     private ArrayList<Plato> comidas;
 
     public class ComidaViewHolder extends RecyclerView.ViewHolder {
-        private TextView titulo;
-        private TextView precio;
+        private TextView titulo, tituloGrid;
+        private TextView precio, precioGrid;
         private TextView descripcion;
-        private ImageView imComida;
+        private ImageView imComida, imComidaGrid;
 
         public ComidaViewHolder(View view) {
             super(view);
@@ -25,6 +25,9 @@ public class AdaptadorListaComida extends RecyclerView.Adapter<AdaptadorListaCom
             precio = view.findViewById(R.id.txtPrecio);
             descripcion = view.findViewById(R.id.txtDescripcion);
             imComida = view.findViewById(R.id.imgComida);
+            tituloGrid = view.findViewById(R.id.txtTituloGrid);
+            precioGrid = view.findViewById(R.id.txtPrecioGrid);
+            imComidaGrid = view.findViewById(R.id.imgComidaGrid);
         }
     }
 
@@ -34,17 +37,31 @@ public class AdaptadorListaComida extends RecyclerView.Adapter<AdaptadorListaCom
 
     @Override
     public ComidaViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_item_pequeno, parent, false);
-        return new ComidaViewHolder(itemView);
+        if (MainActivity.gridOn == 0) {
+            View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_item_list, parent, false);
+            return new ComidaViewHolder(itemView);
+        } else {
+            View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_item_grid, parent, false);
+            return new ComidaViewHolder(itemView);
+        }
+
     }
 
     @Override
     public void onBindViewHolder(ComidaViewHolder holder, int position) {
-        Plato p = comidas.get(position);
-        holder.titulo.setText(p.getNombre());
-        holder.descripcion.setText(p.getDescripcion());
-        holder.precio.setText("Precio: " + p.getPrecio() + "€.");
-        holder.imComida.setImageResource(p.getRutaImagen());
+        if (MainActivity.gridOn == 0) {
+            Plato p = comidas.get(position);
+            holder.titulo.setText(p.getNombre());
+            holder.descripcion.setText(p.getDescripcion());
+            holder.precio.setText("Precio: " + p.getPrecio() + "€.");
+            holder.imComida.setImageResource(p.getRutaImagen());
+        } else {
+            Plato p = comidas.get(position);
+            holder.tituloGrid.setText(p.getNombre());
+            holder.imComidaGrid.setImageResource(p.getRutaImagen());
+            holder.precioGrid.setText(p.getPrecio() + "€");
+        }
+
     }
 
     @Override

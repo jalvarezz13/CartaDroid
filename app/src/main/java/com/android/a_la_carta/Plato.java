@@ -5,24 +5,26 @@ import java.util.ArrayList;
 public class Plato {
     private String nombre;
     private String descripcion;
+    private String descripcionCorta;
     private double precio;
     private int duracion; // minutos
     private ArrayList<String> ingredientes;
     private int rutaImagen;
 
-    public Plato(String nombre, String descripcion, double precio, int duracion, ArrayList<String> ingredientes, int rutaImagen) {
+    public Plato(String nombre, String descripcion, String descripcionCorta, double precio, int duracion, ArrayList<String> ingredientes, int rutaImagen) {
         this.nombre = nombre;
         this.descripcion = descripcion;
+        this.descripcionCorta = descripcionCorta;
         this.precio = precio;
         this.duracion = duracion;
         this.ingredientes = ingredientes;
         this.rutaImagen = rutaImagen;
     }
 
-    public Plato(String nombre, double precio, String descripcion, int rutaImagen) {
+    public Plato(String nombre, double precio, String descripcionCorta, int rutaImagen) {
         this.nombre = nombre;
         this.precio = precio;
-        this.descripcion = descripcion;
+        this.descripcionCorta = descripcionCorta;
         this.rutaImagen = rutaImagen;
     }
 
@@ -40,6 +42,14 @@ public class Plato {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public String getDescripcionCorta() {
+        return descripcionCorta;
+    }
+
+    public void setDescripcionCorta(String descripcionCorta) {
+        this.descripcionCorta = descripcionCorta;
     }
 
     public double getPrecio() {
