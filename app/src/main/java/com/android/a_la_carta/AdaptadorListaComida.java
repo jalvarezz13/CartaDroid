@@ -1,10 +1,8 @@
 package com.android.a_la_carta;
 
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,14 +16,14 @@ public class AdaptadorListaComida extends RecyclerView.Adapter<AdaptadorListaCom
     public class ComidaViewHolder extends RecyclerView.ViewHolder {
         private TextView titulo;
         private TextView precio;
-        private TextView duracion;
+        private TextView descripcion;
         private ImageView imComida;
 
         public ComidaViewHolder(View view) {
             super(view);
             titulo = view.findViewById(R.id.txtTitulo);
             precio = view.findViewById(R.id.txtPrecio);
-            duracion = view.findViewById(R.id.txtDuracion);
+            descripcion = view.findViewById(R.id.txtDescripcion);
             imComida = view.findViewById(R.id.imgComida);
         }
     }
@@ -36,7 +34,7 @@ public class AdaptadorListaComida extends RecyclerView.Adapter<AdaptadorListaCom
 
     @Override
     public ComidaViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_item_grande, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_item_pequeno, parent, false);
         return new ComidaViewHolder(itemView);
     }
 
@@ -44,9 +42,9 @@ public class AdaptadorListaComida extends RecyclerView.Adapter<AdaptadorListaCom
     public void onBindViewHolder(ComidaViewHolder holder, int position) {
         Plato p = comidas.get(position);
         holder.titulo.setText(p.getNombre());
-        holder.duracion.setText("Duracion: " + p.getDuracion() + " minutos.");
+        holder.descripcion.setText(p.getDescripcion());
         holder.precio.setText("Precio: " + p.getPrecio() + "€.");
-        holder.imComida.setImageResource("@drawable/" + p.getRutaImagen());
+        holder.imComida.setImageResource(p.getRutaImagen());
     }
 
     @Override

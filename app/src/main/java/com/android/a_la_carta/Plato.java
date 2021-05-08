@@ -3,14 +3,14 @@ package com.android.a_la_carta;
 import java.util.ArrayList;
 
 public class Plato {
-    String nombre;
-    String descripcion;
-    double precio;
-    int duracion; // minutos
-    ArrayList<String> ingredientes;
-    String rutaImagen;
+    private String nombre;
+    private String descripcion;
+    private double precio;
+    private int duracion; // minutos
+    private ArrayList<String> ingredientes;
+    private int rutaImagen;
 
-    public Plato(String nombre, String descripcion, double precio, int duracion, ArrayList<String> ingredientes, String rutaImagen) {
+    public Plato(String nombre, String descripcion, double precio, int duracion, ArrayList<String> ingredientes, int rutaImagen) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
@@ -19,10 +19,10 @@ public class Plato {
         this.rutaImagen = rutaImagen;
     }
 
-    public Plato(String nombre, double precio, int duracion, String rutaImagen) {
+    public Plato(String nombre, double precio, String descripcion, int rutaImagen) {
         this.nombre = nombre;
         this.precio = precio;
-        this.duracion = duracion;
+        this.descripcion = descripcion;
         this.rutaImagen = rutaImagen;
     }
 
@@ -66,11 +66,11 @@ public class Plato {
         this.ingredientes = ingredientes;
     }
 
-    public String getRutaImagen() {
+    public int getRutaImagen() {
         return rutaImagen;
     }
 
-    public void setRutaImagen(String rutaImagen) {
+    public void setRutaImagen(int rutaImagen) {
         this.rutaImagen = rutaImagen;
     }
 }

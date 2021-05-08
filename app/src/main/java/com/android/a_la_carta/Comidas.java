@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import java.util.ArrayList;
@@ -33,9 +34,10 @@ public class Comidas extends AppCompatActivity {
     }
 
     public static void rellenarDatos() {
-        comidas.add(new Plato("Hamburguesa", 5.95, 15, "hamburguesa1.jpg"));
-        comidas.add(new Plato("Hamburguesa", 5.95, 15, "hamburguesa1.jpg"));
-        comidas.add(new Plato("Hamburguesa", 5.95, 15, "hamburguesa1.jpg"));
-        comidas.add(new Plato("Hamburguesa", 5.95, 15, "hamburguesa1.jpg"));
+        comidas.add(new Plato("Hamburguesa de vacuno", 5.95, "Hamburguesa con carne de vacuno 120 gramos, tomate, queso, lechuga y pepinillo.", R.drawable.hamburguesa1));
+        comidas.add(new Plato("Hamburguesa de vacuno", 5.95, "Hamburguesa con carne de vacuno 120 gramos, tomate, queso, lechuga y pepinillo.",  R.drawable.hamburguesa1));
+        comidas.add(new Plato("Hamburguesa de vacuno", 5.95, "Hamburguesa con carne de vacuno 120 gramos, tomate, queso, lechuga y pepinillo.",  R.drawable.hamburguesa1));
+        comidas.add(new Plato("Hamburguesa de vacuno", 5.95, "Hamburguesa con carne de vacuno 120 gramos, tomate, queso, lechuga y pepinillo.",  R.drawable.hamburguesa1));
+        Log.d("imageIds",  String.valueOf(R.drawable.hamburguesa1));
     }
 }

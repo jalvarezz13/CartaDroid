@@ -11,14 +11,6 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:foregroundGravity="center"
-        tools:srcCompat="@drawable/carta" />
-
     <Space
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,6 +19,22 @@
         android:layout_marginBottom="10dp"
         android:foregroundGravity="center" />
 
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        app:srcCompat="@drawable/carta" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:foregroundGravity="center" />
 
     <ImageButton
         android:id="@+id/btnComida"
@@ -38,7 +46,7 @@
         android:background="#251414"
         android:cropToPadding="false"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/comida" />
+        app:srcCompat="@drawable/btn_comida" />
 
     <Space
         android:layout_width="match_parent"
@@ -58,7 +66,7 @@
         android:backgroundTint="#000000"
         android:foregroundGravity="center"
         android:scaleType="fitEnd"
-        android:src="@drawable/bebida"
+        android:src="@drawable/btn_bebida"
         android:text="aaaa" />
 
     <Space
@@ -75,12 +83,12 @@
         android:layout_height="100dp"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
-        android:background="@drawable/postre"
+        android:background="@drawable/btn_postres"
         android:backgroundTint="#2D2F31"
         android:cropToPadding="true"
         android:foregroundGravity="center"
         android:scaleType="centerCrop"
-        android:src="@drawable/postre"
+        android:src="@drawable/btn_postres"
         android:text="aaaa" />
 
 </LinearLayout>
