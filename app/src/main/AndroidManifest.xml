@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
-        <activity android:name=".Postres"></activity>
+        <activity android:name=".VerValoresNutricionales"></activity>
+        <activity android:name=".VerDuracionPlato" />
+        <activity android:name=".Postres" />
         <activity android:name=".Bebidas" />
         <activity android:name=".Comidas" />
         <activity

@@ -1,7 +1,5 @@
 package com.android.a_la_carta;
 
-import java.util.ArrayList;
-
 public class Plato {
     private String nombre;
     private String descripcion;
@@ -10,12 +8,13 @@ public class Plato {
     private int rutaImagen;
     private int rutaValorNutricional;
 
-    public Plato(String nombre, String descripcion, String descripcionCorta, double precio, int duracion, int rutaImagen, int rutaValorNutricional) {
+    public Plato(String nombre, String descripcion, double precio, int duracion, int rutaImagen, int rutaValorNutricional) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
         this.duracion = duracion;
         this.rutaImagen = rutaImagen;
+        this.rutaValorNutricional = rutaValorNutricional;
     }
 
     public Plato(String nombre, double precio, String descripcion, int rutaImagen) {

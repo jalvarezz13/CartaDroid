@@ -38,6 +38,28 @@ public class Bebidas extends AppCompatActivity {
         adaptador = new AdaptadorListaBebida(bebidas);
         lstBebidas.setAdapter(adaptador);
 
+        Intent i_duracion = new Intent(this, VerDuracionPlato.class);
+        Intent i_valoresNutricionales = new Intent(this, VerValoresNutricionales.class);
+
+        adaptador.setItemSelectedListener(new OnItemSelectedListener() {
+            @Override
+            public void onMenuContextualPlato(int posicion, MenuItem menu) {
+                switch (menu.getItemId()) {
+                    case R.id.showDuration:
+                        i_duracion.putExtra("nombre", bebidas.get(posicion).getNombre());
+                        i_duracion.putExtra("duracion", bebidas.get(posicion).getDuracion());
+                        i_duracion.putExtra("imagen", bebidas.get(posicion).getRutaImagen());
+                        startActivity(i_duracion);
+                        break;
+                    case R.id.showNutricionalValues:
+                        i_valoresNutricionales.putExtra("nombre", bebidas.get(posicion).getNombre());
+                        i_valoresNutricionales.putExtra("tabla", bebidas.get(posicion).getRutaValorNutricional());
+                        i_valoresNutricionales.putExtra("imagen", bebidas.get(posicion).getRutaImagen());
+                        startActivity(i_valoresNutricionales);
+                        break;
+                }
+            }
+        });
         rellenarDatos();
     }
 

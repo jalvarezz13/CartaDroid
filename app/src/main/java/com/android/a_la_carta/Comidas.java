@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -37,6 +38,29 @@ public class Comidas extends AppCompatActivity {
 
         adaptador = new AdaptadorListaComida(comidas);
         lstComidas.setAdapter(adaptador);
+
+        Intent i_duracion = new Intent(this, VerDuracionPlato.class);
+        Intent i_valoresNutricionales = new Intent(this, VerValoresNutricionales.class);
+
+        adaptador.setItemSelectedListener(new OnItemSelectedListener() {
+            @Override
+            public void onMenuContextualPlato(int posicion, MenuItem menu) {
+                switch (menu.getItemId()) {
+                    case R.id.showDuration:
+                        i_duracion.putExtra("nombre", comidas.get(posicion).getNombre());
+                        i_duracion.putExtra("duracion", comidas.get(posicion).getDuracion());
+                        i_duracion.putExtra("imagen", comidas.get(posicion).getRutaImagen());
+                        startActivity(i_duracion);
+                        break;
+                    case R.id.showNutricionalValues:
+                        i_valoresNutricionales.putExtra("nombre", comidas.get(posicion).getNombre());
+                        i_valoresNutricionales.putExtra("tabla", comidas.get(posicion).getRutaValorNutricional());
+                        i_valoresNutricionales.putExtra("imagen", comidas.get(posicion).getRutaImagen());
+                        startActivity(i_valoresNutricionales);
+                        break;
+                }
+            }
+        });
 
         rellenarDatos();
     }
@@ -93,7 +117,7 @@ public class Comidas extends AppCompatActivity {
     }
 
     public static void rellenarDatos() {
-        comidas.add(new Plato("Hamburguesa de vacuno", 5.95, "Hamburguesa de carne de vacuno 120 gramos, tomate, queso, lechuga, pepinillos y pan con semillas de sésamo.", R.drawable.hamburguesa));
+        comidas.add(new Plato("Hamburguesa de vacuno", "Hamburguesa de carne de vacuno 120 gramos, tomate, queso, lechuga, pepinillos y pan con semillas de sésamo.", 5.95, 20, R.drawable.hamburguesa, R.drawable.tabla_hamburguesa));
         comidas.add(new Plato("Patatas fritas", 2.50, "Cucurucho de patatas fritas con dos salsas a elegir.", R.drawable.patatas_fritas));
         comidas.add(new Plato("Bocadillo de calamares", 3.99, "Bocadillo de calamares rebozados con salsa tártara.", R.drawable.bocadillo_calamares));
         comidas.add(new Plato("Ensalada césar", 5.00, "Ensalada con picatostes de pan frito, tiras de pollo rebozadas y salsa césar.", R.drawable.ensalada_cesar));
