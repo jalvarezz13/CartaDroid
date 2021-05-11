@@ -37,7 +37,7 @@ public class AdaptadorListaComida extends RecyclerView.Adapter<AdaptadorListaCom
 
     @Override
     public ComidaViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        if (MainActivity.gridOn == 0) {
+        if (MainActivity.gridOnComidas == 0) {
             View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_item_list, parent, false);
             return new ComidaViewHolder(itemView);
         } else {
@@ -49,10 +49,10 @@ public class AdaptadorListaComida extends RecyclerView.Adapter<AdaptadorListaCom
 
     @Override
     public void onBindViewHolder(ComidaViewHolder holder, int position) {
-        if (MainActivity.gridOn == 0) {
+        if (MainActivity.gridOnComidas == 0) {
             Plato p = comidas.get(position);
             holder.titulo.setText(p.getNombre());
-            holder.descripcion.setText(p.getDescripcion());
+            holder.descripcion.setText(p.getDescripcionCorta());
             holder.precio.setText("Precio: " + p.getPrecio() + "€.");
             holder.imComida.setImageResource(p.getRutaImagen());
         } else {

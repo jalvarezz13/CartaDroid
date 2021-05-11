@@ -14,8 +14,10 @@ import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ImageButton btnComidas, btnBebidas;
-    public static int gridOn = 0;
+    private ImageButton btnComidas, btnBebidas, btnPostres;
+    public static int gridOnComidas = 0;
+    public static int gridOnBebidas = 0;
+    public static int gridOnPostres = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnComidas = findViewById(R.id.btnComida);
         btnBebidas = findViewById(R.id.btnBebida);
+        btnPostres = findViewById(R.id.btnPostres);
 
         btnComidas.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +39,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getBaseContext(), Bebidas.class));
+            }
+        });
+
+        btnPostres.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getBaseContext(), Postres.class));
             }
         });
     }

@@ -8,16 +8,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import java.util.ArrayList;
-
-import static java.lang.System.exit;
 
 public class Comidas extends AppCompatActivity {
     public static RecyclerView lstComidas;
@@ -31,7 +26,7 @@ public class Comidas extends AppCompatActivity {
         lstComidas = findViewById(R.id.rvComidas);
         comidas = new ArrayList<Plato>();
 
-        if (MainActivity.gridOn == 0) {
+        if (MainActivity.gridOnBebidas == 0) {
             lstComidas.setLayoutManager(new LinearLayoutManager(getBaseContext()));
             lstComidas.addItemDecoration(new DividerItemDecoration(this.getBaseContext(), LinearLayoutManager.VERTICAL));
         } else {
@@ -48,11 +43,16 @@ public class Comidas extends AppCompatActivity {
     }
 
     @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, MainActivity.class));
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.over_menu, menu);
         MenuItem item = menu.findItem(R.id.changeView);
 
-        switch (MainActivity.gridOn) {
+        switch (MainActivity.gridOnComidas) {
             case 0:
                 item.setIcon(R.drawable.grid);
                 item.setTitle("Modo Grid");
@@ -80,12 +80,12 @@ public class Comidas extends AppCompatActivity {
             finishAffinity();
         }
         if (item.getItemId() == R.id.changeView) {
-            switch (MainActivity.gridOn) {
+            switch (MainActivity.gridOnComidas) {
                 case 0:
-                    MainActivity.gridOn = 1;
+                    MainActivity.gridOnComidas = 1;
                     break;
                 case 1:
-                    MainActivity.gridOn = 0;
+                    MainActivity.gridOnComidas = 0;
                     break;
             }
             startActivity(new Intent(this, Comidas.class));

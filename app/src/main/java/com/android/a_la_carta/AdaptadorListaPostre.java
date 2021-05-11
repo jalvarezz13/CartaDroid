@@ -10,16 +10,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class AdaptadorListaBebida extends RecyclerView.Adapter<AdaptadorListaBebida.BebidaViewHolder> {
-    private ArrayList<Plato> bebidas;
+public class AdaptadorListaPostre extends RecyclerView.Adapter<AdaptadorListaPostre.PostreViewHolder> {
+    private ArrayList<Plato> postres;
 
-    public class BebidaViewHolder extends RecyclerView.ViewHolder {
+    public class PostreViewHolder extends RecyclerView.ViewHolder {
         private TextView titulo, tituloGrid;
         private TextView precio, precioGrid;
         private TextView descripcion;
         private ImageView imComida, imComidaGrid;
 
-        public BebidaViewHolder(View view) {
+        public PostreViewHolder(View view) {
             super(view);
             titulo = view.findViewById(R.id.txtTitulo);
             precio = view.findViewById(R.id.txtPrecio);
@@ -29,34 +29,36 @@ public class AdaptadorListaBebida extends RecyclerView.Adapter<AdaptadorListaBeb
             precioGrid = view.findViewById(R.id.txtPrecioGrid);
             imComidaGrid = view.findViewById(R.id.imgComidaGrid);
         }
+
     }
 
-    public AdaptadorListaBebida(ArrayList<Plato> bebidas) {
-        this.bebidas = bebidas;
+    public AdaptadorListaPostre(ArrayList<Plato> postres) {
+        this.postres = postres;
     }
+
 
     @Override
-    public AdaptadorListaBebida.BebidaViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        if (MainActivity.gridOnBebidas == 0) {
+    public AdaptadorListaPostre.PostreViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        if (MainActivity.gridOnPostres == 0) {
             View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_item_list, parent, false);
-            return new AdaptadorListaBebida.BebidaViewHolder(itemView);
+            return new AdaptadorListaPostre.PostreViewHolder(itemView);
         } else {
             View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_item_grid, parent, false);
-            return new AdaptadorListaBebida.BebidaViewHolder(itemView);
+            return new AdaptadorListaPostre.PostreViewHolder(itemView);
         }
 
     }
 
     @Override
-    public void onBindViewHolder(AdaptadorListaBebida.BebidaViewHolder holder, int position) {
-        if (MainActivity.gridOnBebidas == 0) {
-            Plato p = bebidas.get(position);
+    public void onBindViewHolder(AdaptadorListaPostre.PostreViewHolder holder, int position) {
+        if (MainActivity.gridOnPostres == 0) {
+            Plato p = postres.get(position);
             holder.titulo.setText(p.getNombre());
             holder.descripcion.setText(p.getDescripcionCorta());
             holder.precio.setText("Precio: " + p.getPrecio() + "€.");
             holder.imComida.setImageResource(p.getRutaImagen());
         } else {
-            Plato p = bebidas.get(position);
+            Plato p = postres.get(position);
             holder.tituloGrid.setText(p.getNombre());
             holder.imComidaGrid.setImageResource(p.getRutaImagen());
             holder.precioGrid.setText(p.getPrecio() + "€");
@@ -66,6 +68,6 @@ public class AdaptadorListaBebida extends RecyclerView.Adapter<AdaptadorListaBeb
 
     @Override
     public int getItemCount() {
-        return bebidas.size();
+        return postres.size();
     }
 }
