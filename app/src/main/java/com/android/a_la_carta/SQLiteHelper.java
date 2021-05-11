@@ -7,20 +7,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 
 public class SQLiteHelper extends SQLiteOpenHelper {
-    /**
-     * Sentencia SQL para crear la tabla de Contactos
-     *
-     *         this.nombre = nombre;
-     *         this.descripcion = descripcion;
-     *         this.precio = precio;
-     *         this.duracion = duracion;
-     *         this.ingredientes = ingredientes;
-     *         this.rutaImagen = rutaImagen;
-     */
-
-    String sqlCrearUsuario = "CREATE TABLE Comida(nombre TEXT, descripcion TEXT, descripcionCorta TEXT, precio DOUBLE, duracion INTEGER, ingredientes STRING, imagenId INTEGER)";
-    String sqlCrearCliente = "CREATE TABLE Bebida(name TEXT, phone TEXT, email TEXT, ultConexion TEXT, numPedidos INTEGER)";
-    String sqlCrearProveedor = "CREATE TABLE Postre(name TEXT, phone TEXT, email TEXT, deuda REAL, numPedidos INTEGER)";
+    String sqlCrearUsuario = "CREATE TABLE Comida(nombre TEXT, descripcion TEXT, precio DOUBLE, duracion INTEGER, imagenId INTEGER, valorNutricionalId INTEGER)";
+    String sqlCrearCliente = "CREATE TABLE Bebida(nombre TEXT, descripcion TEXT, precio DOUBLE, duracion INTEGER, imagenId INTEGER, valorNutricionalId INTEGER)";
+    String sqlCrearProveedor = "CREATE TABLE Postre(nombre TEXT, descripcion TEXT, precio DOUBLE, duracion INTEGER, imagenId INTEGER, valorNutricionalId INTEGER)";
 
     public SQLiteHelper(Context contexto, String nombreBD, SQLiteDatabase.CursorFactory factory, int versionBD) {
         super(contexto, nombreBD, factory, versionBD);

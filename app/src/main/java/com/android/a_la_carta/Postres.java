@@ -23,10 +23,10 @@ public class Postres extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_postres);
-        lstPostres = findViewById(R.id.rvComidas);
+        lstPostres = findViewById(R.id.rvPostres);
         postres = new ArrayList<Plato>();
 
-        if (MainActivity.gridOnBebidas == 0) {
+        if (MainActivity.gridOnPostres == 0) {
             lstPostres.setLayoutManager(new LinearLayoutManager(getBaseContext()));
             lstPostres.addItemDecoration(new DividerItemDecoration(this.getBaseContext(), LinearLayoutManager.VERTICAL));
         } else {

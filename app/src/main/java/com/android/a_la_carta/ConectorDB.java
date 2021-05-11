@@ -1,8 +1,10 @@
 package com.android.a_la_carta;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 public class ConectorDB {
     static final String NOMBRE_BD = "cartaDB";
@@ -26,37 +28,23 @@ public class ConectorDB {
             db.close();
     }
 
-//    /*inserta un usuario en la BD*/
-//    public void insertarUsuario(String name, String username, String phone, String email, String pass) {
-//        String consulta = "INSERT INTO Usuario (name, username, phone, email, pass) VALUES('" + name + "', '" + username + "', '" + phone + "', '" + email + "', '" + pass + "')";
-//        Log.d("dbconsulta", consulta);
-//        db.execSQL(consulta);
-//    }
-//
-//    public String autenticarUsuario(String username) {
-//        Cursor c = db.rawQuery("SELECT pass FROM Usuario WHERE username='" + username + "'", null);
-//        c.moveToFirst();
-//        Log.d("dbconsulta", c.getString(0));
-//        return c.getString(0);
-//    }
-//
-//    public void insertarCliente(String name, String phone, String email, Integer numPedidos) {
-//        String consulta = "INSERT INTO Cliente (name, phone, email, ultConexion, numPedidos) VALUES('" + name + "', '" + phone + "', '" + email + "', 'Nunca', " + numPedidos + ")";
-//        Log.d("dbconsulta", consulta);
-//        db.execSQL(consulta);
-//    }
-//
-//    public void insertarProveedor(String name, String phone, String email, double deuda, Integer numPedidos) {
-//        String consulta = "INSERT INTO Proveedor (name, phone, email, deuda, numPedidos) VALUES('" + name + "', '" + phone + "', '" + email + "', " + deuda + ", " + numPedidos + ")";
-//        Log.d("dbconsulta", consulta);
-//        db.execSQL(consulta);
-//    }
-//
-//    public Cursor obtenerClientes() {
-//        return db.rawQuery("SELECT * FROM Cliente", null);
-//    }
-//
-//    public Cursor obtenerProveedores() {
-//        return db.rawQuery("SELECT * FROM Proveedor", null);
-//    }
+    //nombre TEXT, descripcion TEXT, precio DOUBLE, duracion INTEGER, ingredientes STRING, imagenId INTEGER, valorNutricionalId INTEGER
+
+    public void insertarPlato(String table, String nombrePlato, String descripcionPlato, double precioPlato, int duracionPlato, int imagenId, int valorNutricionalId) {
+        String consulta = "INSERT INTO" + table + "(nombre, descripcion, precio, duracion, imagenId, valorNutricionalId) VALUES('" + nombrePlato + "', '" + descripcionPlato + "', " + precioPlato + ", " + duracionPlato + ", " + imagenId + ", " + valorNutricionalId + ")";
+        Log.d("dbconsulta", consulta);
+        db.execSQL(consulta);
+    }
+
+    public Cursor obtenerComidas() {
+        return db.rawQuery("SELECT * FROM Comida", null);
+    }
+
+    public Cursor obtenerBebidas() {
+        return db.rawQuery("SELECT * FROM Bebida", null);
+    }
+
+    public Cursor obtenerPostres() {
+        return db.rawQuery("SELECT * FROM Postre", null);
+    }
 }

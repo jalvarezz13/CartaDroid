@@ -5,26 +5,23 @@ import java.util.ArrayList;
 public class Plato {
     private String nombre;
     private String descripcion;
-    private String descripcionCorta;
     private double precio;
     private int duracion; // minutos
-    private ArrayList<String> ingredientes;
     private int rutaImagen;
+    private int rutaValorNutricional;
 
-    public Plato(String nombre, String descripcion, String descripcionCorta, double precio, int duracion, ArrayList<String> ingredientes, int rutaImagen) {
+    public Plato(String nombre, String descripcion, String descripcionCorta, double precio, int duracion, int rutaImagen, int rutaValorNutricional) {
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.descripcionCorta = descripcionCorta;
         this.precio = precio;
         this.duracion = duracion;
-        this.ingredientes = ingredientes;
         this.rutaImagen = rutaImagen;
     }
 
-    public Plato(String nombre, double precio, String descripcionCorta, int rutaImagen) {
+    public Plato(String nombre, double precio, String descripcion, int rutaImagen) {
         this.nombre = nombre;
         this.precio = precio;
-        this.descripcionCorta = descripcionCorta;
+        this.descripcion = descripcion;
         this.rutaImagen = rutaImagen;
     }
 
@@ -44,14 +41,6 @@ public class Plato {
         this.descripcion = descripcion;
     }
 
-    public String getDescripcionCorta() {
-        return descripcionCorta;
-    }
-
-    public void setDescripcionCorta(String descripcionCorta) {
-        this.descripcionCorta = descripcionCorta;
-    }
-
     public double getPrecio() {
         return precio;
     }
@@ -68,19 +57,19 @@ public class Plato {
         this.duracion = duracion;
     }
 
-    public ArrayList<String> getIngredientes() {
-        return ingredientes;
-    }
-
-    public void setIngredientes(ArrayList<String> ingredientes) {
-        this.ingredientes = ingredientes;
-    }
-
     public int getRutaImagen() {
         return rutaImagen;
     }
 
     public void setRutaImagen(int rutaImagen) {
         this.rutaImagen = rutaImagen;
+    }
+
+    public int getRutaValorNutricional() {
+        return rutaValorNutricional;
+    }
+
+    public void setRutaValorNutricional(int rutaValorNutricional) {
+        this.rutaValorNutricional = rutaValorNutricional;
     }
 }
