@@ -26,7 +26,7 @@ public class Comidas extends AppCompatActivity {
         lstComidas = findViewById(R.id.rvComidas);
         comidas = new ArrayList<Plato>();
 
-        if (MainActivity.gridOnBebidas == 0) {
+        if (MainActivity.gridOnComidas == 0) {
             lstComidas.setLayoutManager(new LinearLayoutManager(getBaseContext()));
             lstComidas.addItemDecoration(new DividerItemDecoration(this.getBaseContext(), LinearLayoutManager.VERTICAL));
         } else {
@@ -39,7 +39,6 @@ public class Comidas extends AppCompatActivity {
         lstComidas.setAdapter(adaptador);
 
         rellenarDatos();
-        lstComidas.addItemDecoration(new DividerItemDecoration(this.getBaseContext(), LinearLayoutManager.VERTICAL));
     }
 
     @Override

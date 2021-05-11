@@ -3,6 +3,7 @@ package com.android.a_la_carta;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -24,13 +25,20 @@ public class Bebidas extends AppCompatActivity {
         setContentView(R.layout.activity_bebidas);
         lstBebidas = findViewById(R.id.rvBebidas);
         bebidas = new ArrayList<Plato>();
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getBaseContext());
-        lstBebidas.setLayoutManager(mLayoutManager);
+
+        if (MainActivity.gridOnBebidas == 0) {
+            lstBebidas.setLayoutManager(new LinearLayoutManager(getBaseContext()));
+            lstBebidas.addItemDecoration(new DividerItemDecoration(this.getBaseContext(), LinearLayoutManager.VERTICAL));
+        } else {
+            lstBebidas.setLayoutManager(new GridLayoutManager(getBaseContext(), 2));
+            lstBebidas.addItemDecoration(new DividerItemDecoration(this.getBaseContext(), LinearLayoutManager.VERTICAL));
+            lstBebidas.addItemDecoration(new DividerItemDecoration(this.getBaseContext(), LinearLayoutManager.HORIZONTAL));
+        }
+
         adaptador = new AdaptadorListaBebida(bebidas);
         lstBebidas.setAdapter(adaptador);
 
         rellenarDatos();
-        lstBebidas.addItemDecoration(new DividerItemDecoration(this.getBaseContext(), LinearLayoutManager.VERTICAL));
     }
 
     @Override

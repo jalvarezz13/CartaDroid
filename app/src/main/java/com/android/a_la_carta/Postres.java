@@ -3,6 +3,7 @@ package com.android.a_la_carta;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -22,15 +23,22 @@ public class Postres extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_postres);
-        lstPostres = findViewById(R.id.rvPostres);
+        lstPostres = findViewById(R.id.rvComidas);
         postres = new ArrayList<Plato>();
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getBaseContext());
-        lstPostres.setLayoutManager(mLayoutManager);
+
+        if (MainActivity.gridOnBebidas == 0) {
+            lstPostres.setLayoutManager(new LinearLayoutManager(getBaseContext()));
+            lstPostres.addItemDecoration(new DividerItemDecoration(this.getBaseContext(), LinearLayoutManager.VERTICAL));
+        } else {
+            lstPostres.setLayoutManager(new GridLayoutManager(getBaseContext(), 2));
+            lstPostres.addItemDecoration(new DividerItemDecoration(this.getBaseContext(), LinearLayoutManager.VERTICAL));
+            lstPostres.addItemDecoration(new DividerItemDecoration(this.getBaseContext(), LinearLayoutManager.HORIZONTAL));
+        }
+
         adaptador = new AdaptadorListaPostre(postres);
         lstPostres.setAdapter(adaptador);
 
         rellenarDatos();
-        lstPostres.addItemDecoration(new DividerItemDecoration(this.getBaseContext(), LinearLayoutManager.VERTICAL));
     }
 
     @Override
