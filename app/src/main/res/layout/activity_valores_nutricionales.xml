@@ -46,22 +46,33 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="25dp" />
 
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="INFORMACIÓN NUTRICIONAL"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
             <ImageButton
                 android:id="@+id/imgTablaValorNutricional"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:background="#FFFFFF"
                 android:foregroundGravity="center"
-                android:scaleType="fitStart"
+                android:scaleType="centerInside"
                 tools:src="@tools:sample/backgrounds/scenic" />
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="100dp" />
+                android:layout_marginBottom="25dp" />
 
             <Button
                 android:id="@+id/btnVale"
@@ -73,6 +84,11 @@
                 android:text="VALE"
                 android:textColor="@color/white"
                 app:icon="@drawable/ic_baseline_done_24" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp" />
         </LinearLayout>
     </ScrollView>
 

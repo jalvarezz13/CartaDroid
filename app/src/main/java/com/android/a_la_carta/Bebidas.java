@@ -116,9 +116,16 @@ public class Bebidas extends AppCompatActivity {
     }
 
     public static void rellenarDatos() {
-        bebidas.add(new Plato("Coca-Cola", 2.20, "Bebida gaseosa y refrescante de cola.", R.drawable.coca_cola));
-        bebidas.add(new Plato("Fanta de Naranja", 2.20, "Bebida gaseosa y refrescante con sabor a naranja.", R.drawable.fanta_naranja));
-        bebidas.add(new Plato("Fanta de Limon", 2.20, "Bebida gaseosa y refrescante con sabor a limon.", R.drawable.fanta_limon));
-        bebidas.add(new Plato("Cerveza Amstel (con Alcohol)", 2.00, "Bebida alcohólica preparada a base de cebada", R.drawable.cerveza_amstel));
+        bebidas.add(new Plato("Coca-Cola", "Bebida gaseosa y refrescante de cola.", 2.20, 0, R.drawable.coca_cola, R.drawable.tabla_cocacola));
+        bebidas.add(new Plato("Fanta de Naranja", "Bebida gaseosa y refrescante con sabor a naranja.", 2.20, 0, R.drawable.fanta_naranja, R.drawable.fanta_naranja));
+        bebidas.add(new Plato("Fanta de Limon", "Bebida gaseosa y refrescante con sabor a limon.", 2.20, 0, R.drawable.fanta_limon, R.drawable.tabla_fantalimon));
+        bebidas.add(new Plato("Cerveza Amstel (con Alcohol)", "Bebida alcohólica preparada a base de cebada", 2.00, 0, R.drawable.cerveza_amstel, R.drawable.tabla_cerveza_amstel));
+        bebidas.add(new Plato("San Miguel", "Cerveza fría, de procedencia cantábrica.", 2.20, 0, R.drawable.sanmiguel, R.drawable.tablacerveza));
+        bebidas.add(new Plato("Mahou", "Cerveza artesanal con 120 años de experiencia.", 2.20, 0, R.drawable.mahou, R.drawable.tablacervezaligera));
+        bebidas.add(new Plato("Aquarius", "Bebida azucarada para darte energía", 2.00, 0, R.drawable.aquarius, R.drawable.tablaaquarius));
+        bebidas.add(new Plato("Trina", "Bebida perfecta para los días de calor.", 2.20, 0, R.drawable.trina, R.drawable.tablatrina));
+        bebidas.add(new Plato("Agua embotellada", "Agua de manantial, 100% libre de impurezas. Elige entre fría o del tiempo.", 1.50, 0, R.drawable.agua, R.drawable.tablaagua));
+        bebidas.add(new Plato("Nestea", "Bebida resfrescante con ligero sabor a limón", 2.20, 0, R.drawable.nestea, R.drawable.tablanestea));
+        bebidas.add(new Plato("Batido de Chocolate", "Batido con un 80% de cacao original. ¡Pruébalo!", 2.00, 0, R.drawable.batidochocolate, R.drawable.tablabatidochocolate));
     }
 }

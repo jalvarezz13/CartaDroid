@@ -118,9 +118,15 @@ public class Comidas extends AppCompatActivity {
 
     public static void rellenarDatos() {
         comidas.add(new Plato("Hamburguesa de vacuno", "Hamburguesa de carne de vacuno 120 gramos, tomate, queso, lechuga, pepinillos y pan con semillas de sésamo.", 5.95, 20, R.drawable.hamburguesa, R.drawable.tabla_hamburguesa));
-        comidas.add(new Plato("Patatas fritas", 2.50, "Cucurucho de patatas fritas con dos salsas a elegir.", R.drawable.patatas_fritas));
-        comidas.add(new Plato("Bocadillo de calamares", 3.99, "Bocadillo de calamares rebozados con salsa tártara.", R.drawable.bocadillo_calamares));
-        comidas.add(new Plato("Ensalada césar", 5.00, "Ensalada con picatostes de pan frito, tiras de pollo rebozadas y salsa césar.", R.drawable.ensalada_cesar));
-        comidas.add(new Plato("Pizza Pepperoni", 9.95, "¡ESPECIAL DE LA CASA! Pizza con base de queso y rodajas de pepperoni.", R.drawable.pizza_peperonni));
+        comidas.add(new Plato("Patatas fritas", "Cucurucho de patatas fritas con dos salsas a elegir.", 2.50, 15, R.drawable.patatas_fritas, R.drawable.tabla_patatas_fritas));
+        comidas.add(new Plato("Bocadillo de calamares", "Bocadillo de calamares rebozados con salsa tártara.", 3.99, 9, R.drawable.bocadillo_calamares, R.drawable.tabla_bocadillo_calamares));
+        comidas.add(new Plato("Ensalada césar", "Ensalada con picatostes de pan frito, tiras de pollo rebozadas y salsa césar.", 5.00, 12, R.drawable.ensalada_cesar, R.drawable.tabla_ensalada_cesar));
+        comidas.add(new Plato("Pizza Pepperoni", "¡ESPECIAL DE LA CASA! Pizza con base de queso y rodajas de pepperoni.", 9.95, 20, R.drawable.pizza_peperonni, R.drawable.tabla_pizza_pepperoni));
+        comidas.add(new Plato("Alitas de pollo", "Crujientes alitas de pollo picantes y con salsa barbacoa.", 5.50, 20, R.drawable.alitas, R.drawable.tabla_alitas));
+        comidas.add(new Plato("Sopa de marisco", "Rica y nutritiva sopa de marisco, del mar a tu plato.", 6.00, 15, R.drawable.sopa_marisco, R.drawable.tabla_sopa_marisco));
+        comidas.add(new Plato("Ensalada mixta", "Ensalada de la caso con hortalizas recien cogidas del huerto.", 4.50, 13, R.drawable.ensalada, R.drawable.ensalada));
+        comidas.add(new Plato("Lentejas", "Lentejas cocidas con verdura y carne para combatir el frío.", 5.00, 17, R.drawable.lentejas, R.drawable.tabla_lentejas));
+        comidas.add(new Plato("Paella", "Auténtica paella valenciana hecha por nuestros chefs en un tiempo record sin perder su sabor original.", 12.00, 40, R.drawable.paella, R.drawable.tabla_paella));
+        comidas.add(new Plato("Pan", "Pan del dia horneado para lograr su corteza crujiente y su miga tierna.", 1.50, 0, R.drawable.pan, R.drawable.tabla_pan));
     }
 }

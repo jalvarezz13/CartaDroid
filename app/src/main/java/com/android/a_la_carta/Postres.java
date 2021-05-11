@@ -117,13 +117,18 @@ public class Postres extends AppCompatActivity {
     }
 
     public static void rellenarDatos() {
-        postres.add(new Plato("Yogur natural", 1.50, "Yogur casero elaborado por nuestro chef. Contiene leche.", R.drawable.yogur_natural));
-        postres.add(new Plato("Tarta de chocolate", 2.50, "¡RECOMENDADO POR LA CASA! Bollo de chocolate con nueces en su interior. Se sirve frío y con nata por encima.", R.drawable.tarta_chocolate));
-        postres.add(new Plato("Fruta de temporada", 2, "Frutas a elegir: Melón, Sandía, Manzana o Fresas.", R.drawable.fruta));
-        postres.add(new Plato("Gofre", 3.00, "Gofre elaborado en el momento. Se sirve caliente con unas finas capas de nutella, nata y fresas troceadas.", R.drawable.gofre));
-        postres.add(new Plato("Creps con nutella", 2.00, "El postre está compuesto por dos creps con crema de Nutella en su interior. (Se puede servir con otros complementos)", R.drawable.crepes));
-        postres.add(new Plato("Conos de hellado", 1, "Conos de helado de diferentes sabores. Disponibles: Fresa, Nata, Vainilla, Chocolate y Turrón.", R.drawable.cono_helado));
-        postres.add(new Plato("Flan de huevo", 2.5, "Flan casero elaborado por nuestro chef con cremoso caramelo por encima.", R.drawable.flan));
+        postres.add(new Plato("Yogur natural", "Yogur casero elaborado por nuestro chef. Contiene leche.", 1.50, 2, R.drawable.yogur_natural, R.drawable.tabla_yogur_natural));
+        postres.add(new Plato("Tarta de chocolate", "¡RECOMENDADO POR LA CASA! Bollo de chocolate con nueces en su interior. Se sirve frío y con nata por encima.", 2.50, 10, R.drawable.tarta_chocolate, R.drawable.tabla_tarta_chocolate));
+        postres.add(new Plato("Fruta de temporada", "Frutas a elegir: Melón, Sandía, Manzana o Fresas.", 2, 0, R.drawable.fruta, R.drawable.tabla_fruta));
+        postres.add(new Plato("Gofre", "Gofre elaborado en el momento. Se sirve caliente con unas finas capas de nutella, nata y fresas troceadas.", 3.00, 15, R.drawable.gofre, R.drawable.tabla_gofre));
+        postres.add(new Plato("Creps con nutella", "El postre está compuesto por dos creps con crema de Nutella en su interior. (Se puede servir con otros complementos)", 2.00, 10, R.drawable.crepes, R.drawable.tabla_crepe));
+        postres.add(new Plato("Conos de hellado", "Conos de helado de diferentes sabores. Disponibles: Fresa, Nata, Vainilla, Chocolate y Turrón.", 1.5, 2, R.drawable.cono_helado, R.drawable.tabla_cono_helado));
+        postres.add(new Plato("Flan de huevo", "Flan casero elaborado por nuestro chef con cremoso caramelo por encima.", 2.5, 5, R.drawable.flan, R.drawable.tabla_flan_huevo));
+        postres.add(new Plato("Natillas con canela", "Natillas caseras con regusto a canela de Vigo y con una galleta Maria encima manteniendo su tradición.", 1.10, 8, R.drawable.natillas, R.drawable.tablanatillas));
+        postres.add(new Plato("Brownie", "Disfruta de nuestro Brownie relleno de nata, la mezcla de frio y calor lo convierte en el postre perfecto", 2.50, 5, R.drawable.brownie, R.drawable.tablabrownie));
+        postres.add(new Plato("Cup cakes", "Delicioso combinado de cup cakes de diferentes colores y sabores. Muy esponjosos y sabrosos.", 3.00, 4, R.drawable.cup_cakes, R.drawable.tabla_cup_cakes));
+        postres.add(new Plato("Arroz con leche", "Riquísimo arroz con leche de la casa realizadas con la receta original de la familia. Con ligero sabor a canela.", 2.50, 5, R.drawable.arroz_leche, R.drawable.tabla_arroz_leche));
+
     }
 }
 
