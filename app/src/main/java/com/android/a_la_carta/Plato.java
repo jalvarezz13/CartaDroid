@@ -17,11 +17,7 @@ public class Plato {
         this.rutaValorNutricional = rutaValorNutricional;
     }
 
-    public Plato(String nombre, double precio, String descripcion, int rutaImagen) {
-        this.nombre = nombre;
-        this.precio = precio;
-        this.descripcion = descripcion;
-        this.rutaImagen = rutaImagen;
+    public Plato() {
     }
 
     public String getNombre() {

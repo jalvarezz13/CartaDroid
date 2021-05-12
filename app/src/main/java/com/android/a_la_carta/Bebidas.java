@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,6 +19,7 @@ public class Bebidas extends AppCompatActivity {
     public static RecyclerView lstBebidas;
     public static ArrayList<Plato> bebidas;
     public static AdaptadorListaBebida adaptador;
+    public static ConectorDB conectorDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +62,9 @@ public class Bebidas extends AppCompatActivity {
                 }
             }
         });
+
+
+        conectorDB = new ConectorDB(this.getBaseContext());
         rellenarDatos();
     }
 
@@ -116,16 +121,35 @@ public class Bebidas extends AppCompatActivity {
     }
 
     public static void rellenarDatos() {
-        bebidas.add(new Plato("Coca-Cola", "Bebida gaseosa y refrescante de cola.", 2.20, 0, R.drawable.coca_cola, R.drawable.tabla_cocacola));
-        bebidas.add(new Plato("Fanta de Naranja", "Bebida gaseosa y refrescante con sabor a naranja.", 2.20, 0, R.drawable.fanta_naranja, R.drawable.fanta_naranja));
-        bebidas.add(new Plato("Fanta de Limon", "Bebida gaseosa y refrescante con sabor a limon.", 2.20, 0, R.drawable.fanta_limon, R.drawable.tabla_fantalimon));
-        bebidas.add(new Plato("Cerveza Amstel (con Alcohol)", "Bebida alcohólica preparada a base de cebada", 2.00, 0, R.drawable.cerveza_amstel, R.drawable.tabla_cerveza_amstel));
-        bebidas.add(new Plato("San Miguel", "Cerveza fría, de procedencia cantábrica.", 2.20, 0, R.drawable.sanmiguel, R.drawable.tablacerveza));
-        bebidas.add(new Plato("Mahou", "Cerveza artesanal con 120 años de experiencia.", 2.20, 0, R.drawable.mahou, R.drawable.tablacervezaligera));
-        bebidas.add(new Plato("Aquarius", "Bebida azucarada para darte energía", 2.00, 0, R.drawable.aquarius, R.drawable.tablaaquarius));
-        bebidas.add(new Plato("Trina", "Bebida perfecta para los días de calor.", 2.20, 0, R.drawable.trina, R.drawable.tablatrina));
-        bebidas.add(new Plato("Agua embotellada", "Agua de manantial, 100% libre de impurezas. Elige entre fría o del tiempo.", 1.50, 0, R.drawable.agua, R.drawable.tablaagua));
-        bebidas.add(new Plato("Nestea", "Bebida resfrescante con ligero sabor a limón", 2.20, 0, R.drawable.nestea, R.drawable.tablanestea));
-        bebidas.add(new Plato("Batido de Chocolate", "Batido con un 80% de cacao original. ¡Pruébalo!", 2.00, 0, R.drawable.batidochocolate, R.drawable.tablabatidochocolate));
+        bebidas.removeAll(bebidas);
+        conectorDB.abrir();
+        Cursor c = conectorDB.obtenerBebidas();
+        if (c.moveToFirst()) {
+            do {
+                Plato p = new Plato();
+                p.setNombre(c.getString(0));
+                p.setDescripcion(c.getString(1));
+                p.setPrecio(c.getDouble(2));
+                p.setDuracion(c.getInt(3));
+                p.setRutaImagen(c.getInt(4));
+                p.setRutaValorNutricional(c.getInt(5));
+                bebidas.add(p);
+            } while (c.moveToNext());
+        }
+        c.close();
+        conectorDB.cerrar();
+        lstBebidas.getAdapter().notifyDataSetChanged();
+
+//        bebidas.add(new Plato("Coca-Cola", "Bebida gaseosa y refrescante de cola.", 2.20, 0, R.drawable.coca_cola, R.drawable.tabla_cocacola));
+//        bebidas.add(new Plato("Fanta de Naranja", "Bebida gaseosa y refrescante con sabor a naranja.", 2.20, 0, R.drawable.fanta_naranja, R.drawable.fanta_naranja));
+//        bebidas.add(new Plato("Fanta de Limon", "Bebida gaseosa y refrescante con sabor a limon.", 2.20, 0, R.drawable.fanta_limon, R.drawable.tabla_fantalimon));
+//        bebidas.add(new Plato("Cerveza Amstel (con Alcohol)", "Bebida alcohólica preparada a base de cebada", 2.00, 0, R.drawable.cerveza_amstel, R.drawable.tabla_cerveza_amstel));
+//        bebidas.add(new Plato("San Miguel", "Cerveza fría, de procedencia cantábrica.", 2.20, 0, R.drawable.sanmiguel, R.drawable.tablacerveza));
+//        bebidas.add(new Plato("Mahou", "Cerveza artesanal con 120 años de experiencia.", 2.20, 0, R.drawable.mahou, R.drawable.tablacervezaligera));
+//        bebidas.add(new Plato("Aquarius", "Bebida azucarada para darte energía", 2.00, 0, R.drawable.aquarius, R.drawable.tablaaquarius));
+//        bebidas.add(new Plato("Trina", "Bebida perfecta para los días de calor.", 2.20, 0, R.drawable.trina, R.drawable.tablatrina));
+//        bebidas.add(new Plato("Agua embotellada", "Agua de manantial, 100% libre de impurezas. Elige entre fría o del tiempo.", 1.50, 0, R.drawable.agua, R.drawable.tablaagua));
+//        bebidas.add(new Plato("Nestea", "Bebida resfrescante con ligero sabor a limón", 2.20, 0, R.drawable.nestea, R.drawable.tablanestea));
+//        bebidas.add(new Plato("Batido de Chocolate", "Batido con un 80% de cacao original. ¡Pruébalo!", 2.00, 0, R.drawable.batidochocolate, R.drawable.tablabatidochocolate));
     }
 }

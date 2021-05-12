@@ -31,7 +31,7 @@ public class ConectorDB {
     //nombre TEXT, descripcion TEXT, precio DOUBLE, duracion INTEGER, ingredientes STRING, imagenId INTEGER, valorNutricionalId INTEGER
 
     public void insertarPlato(String table, String nombrePlato, String descripcionPlato, double precioPlato, int duracionPlato, int imagenId, int valorNutricionalId) {
-        String consulta = "INSERT INTO" + table + "(nombre, descripcion, precio, duracion, imagenId, valorNutricionalId) VALUES('" + nombrePlato + "', '" + descripcionPlato + "', " + precioPlato + ", " + duracionPlato + ", " + imagenId + ", " + valorNutricionalId + ")";
+        String consulta = "INSERT INTO " + table + " (nombre, descripcion, precio, duracion, imagenId, valorNutricionalId) VALUES('" + nombrePlato + "', '" + descripcionPlato + "', " + precioPlato + ", " + duracionPlato + ", " + imagenId + ", " + valorNutricionalId + ")";
         Log.d("dbconsulta", consulta);
         db.execSQL(consulta);
     }
