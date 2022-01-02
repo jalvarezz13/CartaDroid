@@ -1,7 +1,7 @@
 <img src="https://github.com/jalvarezz13/CartaDroid/blob/master/images/logo.png" width="" height="80" align = "left">
 
 # CartaDroid
-### Contenido
+## Contenido
 Este trabajo nace con el objetivo de aumentar los conocimientos en el entorno Android Studio y en el mundillo de Android Developer. La aplicación, consiste en una carta de un restaurante donde al entrar aparece un menú principal. En dicho menú podemos elegir entre comidas, bebidas y postres. Y en cada uno de los platos podemos entrar a dos menús contextuales:
 - Información sobre el plato (ingredientes e información nutricional)
 - Tiempo de preparación en cocina
