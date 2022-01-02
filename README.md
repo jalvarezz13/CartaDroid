@@ -18,7 +18,7 @@ git clone https://github.com/jalvarezz13/MeMeCollection
 ## Capturas
 <div align="center">
   <h2>Funcionamiento de la aplicación</h2>
-  <img src="https://github.com/jalvarezz13/MeMeCollection/blob/master/images/rrss.png" width="80%" height="">
+  <img src="https://github.com/jalvarezz13/CartaDroid/blob/master/images/funcionamiento.gif" width="30%" height="">
 </div>
 
 ## Tecnologías
