@@ -10,7 +10,7 @@ Este trabajo nace con el objetivo de aumentar los conocimientos en el entorno An
 Contiene todo el código y los recursos multimedia para la correcta ejecución de la aplicación. Para ello:
   1. Clona el repositorio con 
 ```
-git clone https://github.com/jalvarezz13/MeMeCollection
+git clone https://github.com/jalvarezz13/CartaDroid
 ```
   2. Ábrelo en Android Studio
   3. Ejecutar y probar
